@@ -51,13 +51,13 @@ class _QuizpageState extends State<Quizpage> {
         children: [
           Text(
             queAns[index]['question'],
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 25,
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Column(
             children: List.generate(
               queAns[index]['options'].length,
@@ -91,11 +91,11 @@ class _QuizpageState extends State<Quizpage> {
                       tileColor: tileColorsList[index][optionindex],
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
-                        side: BorderSide(color: Colors.white),
+                        side: const BorderSide(color: Colors.white),
                       ),
                       title: Text(
                         "${optionindex + 1}.  $option",
-                        style: TextStyle(color: Colors.white, fontSize: 20),
+                        style: const TextStyle(color: Colors.white, fontSize: 20),
                       ),
                     ),
                   ),
@@ -103,7 +103,7 @@ class _QuizpageState extends State<Quizpage> {
               },
             ),
           ),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           ElevatedButton(
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
@@ -118,7 +118,7 @@ class _QuizpageState extends State<Quizpage> {
                 showResult();
               }
             },
-            child: Text(
+            child: const Text(
               "Next",
               style: TextStyle(fontSize: 18),
             ),
@@ -145,13 +145,13 @@ class _QuizpageState extends State<Quizpage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text("Congrats!",
+              const Text("Congrats!",
               style: TextStyle(fontSize: 30,color: Colors.green,fontWeight: FontWeight.bold),),
-             Text("You have completed Quiz Successfully",
+             const Text("You have completed Quiz Successfully",
              style: TextStyle(fontWeight: FontWeight.bold),),
               Text(
                   " $correctAns out of ${queAns.length} questions correct",
-              style: TextStyle(fontWeight: FontWeight.bold),),
+              style: const TextStyle(fontWeight: FontWeight.bold),),
             ],
           ),
           actions: [
@@ -159,7 +159,7 @@ class _QuizpageState extends State<Quizpage> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text("Ok"),
+              child: const Text("Ok"),
             ),
           ],
         );
